@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import UserCard from './components/UserCard';
 
 function App() {
+
+  let name="API";
+  let age="28"
+
+  let users=[
+    {name:"Amal", email:"amal@gmail.com", phone:1111, function : (x)=>alert(`Hello ${x}`)},
+    {name:"Hichem", email:"hichem@gmail.com", phone:2222, function : (x)=>alert(`Hello ${x}`)},
+    {name:"Mouna", email:"mouna@gmail.com", phone:3333, function : (x)=>alert(`Hello ${x}`)}
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* <UserCard name={name} age={age} /> */}
+        {users.map((el, i)=><UserCard user={el} key={i} />)}
     </div>
   );
 }
